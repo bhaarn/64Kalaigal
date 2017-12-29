@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent_pane"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_margin"
+    tools:context=".activities.MainActivity">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollView"
+        style="@style/ScrollViewStyle">
+
+        <LinearLayout
+            android:id="@+id/overall_parent"
+            style="@style/ParentLinearLayoutStyle">
+
+            <android.support.v7.widget.CardView
+                style="@style/ChildCardViewStyle"
+                android:layout_height="wrap_content">
+
+                <LinearLayout style="@style/LinearLayoutStyle">
+
+                    <TextView
+                        android:id="@+id/parent_title"
+                        style="@style/TextViewStyle"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/parent_soothiram"
+                        style="@style/TextViewStyle"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/parent_content"
+                        style="@style/TextViewStyle" />
+
+                    <TextView
+                        android:id="@+id/parent_example"
+                        style="@style/TextViewStyle" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-2373003321681741/7281773351" />
+
+</LinearLayout>

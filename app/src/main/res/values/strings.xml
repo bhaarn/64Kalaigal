@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">64Kalai</string>
+    <string name="ad_id">ca-app-pub-2373003321681741~7281773351</string>
+    <string name="action_app_rate">Rate the App</string>
+    <string name="action_feature_help">Help</string>
+    <string name="action_app_share">Share the App</string>
+    <string name="action_more_apps">Find More Apps From Developer</string>
+    <string name="action_about">About Us</string>
+    <string name="share_message">Please check this application.  This app is very good in 64 Kalai.  You can find the app in play store with the url http://play.google.com/store/apps/details?id=</string>
+    <string name="play_more_apps">https://play.google.com/store/search?q=padhugadhasan+application</string>
+    <string name="old_play_store">market://details?id=</string>
+    <string name="new_play_store">http://play.google.com/store/apps/details?id=</string>
+    <string name="about_text">about</string>
+    <string name="help_text">help</string>
+    <string name="json_file_name">64kalai.json</string>
+    <string name="json_open_file_format">UTF-8</string>
+</resources>

@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.BaseActivity"
+    android:layout_marginTop="@dimen/parent_layout_common_margin"
+    style="@style/ParentLinearLayoutStyle">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollView"
+        style="@style/ScrollViewStyle">
+
+        <android.support.v7.widget.CardView
+            style="@style/ChildCardViewStyle"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/about_text"
+                style="@style/TextViewStyle" />
+
+        </android.support.v7.widget.CardView>
+
+    </ScrollView>
+
+</LinearLayout>
