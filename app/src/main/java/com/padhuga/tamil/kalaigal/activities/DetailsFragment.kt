@@ -29,6 +29,9 @@ class DetailsFragment : Fragment() {
         rootView.parent_soothiram?.text = parentModel.soothiram
         rootView.parent_content?.text = parentModel.desc
         rootView.parent_example?.text = parentModel.example
+        if(rootView.parent_soothiram?.text != null) {
+            rootView.parent_soothiram?.visibility = View.VISIBLE
+        }
     }
 
     companion object {
