@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="activity_margin">4dp</dimen>
-    <dimen name="listViewHeaderPadding">8dp</dimen>
-    <dimen name="listViewItemPadding">5dp</dimen>
-    <dimen name="commonPadding">10dp</dimen>
-    <dimen name="cardviewProperty">20dp</dimen>
+    <dimen name="list_view_header_padding">8dp</dimen>
+    <dimen name="list_view_item_padding">5dp</dimen>
+    <dimen name="common_padding">10dp</dimen>
+    <dimen name="card_view_property">20dp</dimen>
     <dimen name="parent_layout_common_margin">0dp</dimen>
 </resources>

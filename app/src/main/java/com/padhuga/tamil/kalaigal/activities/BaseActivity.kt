@@ -11,13 +11,11 @@ import com.padhuga.tamil.kalaigal.R
 import com.padhuga.tamil.kalaigal.models.ParentModel
 
 open class BaseActivity : AppCompatActivity() {
-    private lateinit var appName: String
     lateinit var parentModel: ParentModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        appName = packageName;
-        parentModel = readJSONFromAssetsAndConvertTogson();
+        parentModel = readJSONFromAssetsAndConvertToGson()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -55,8 +53,8 @@ open class BaseActivity : AppCompatActivity() {
         val sharingIntent = Intent(Intent.ACTION_SEND)
         sharingIntent.type = "text/plain"
         sharingIntent.putExtra(Intent.EXTRA_SUBJECT, R.string.app_name)
-        sharingIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_message) + appName)
-        startActivity(Intent.createChooser(sharingIntent, "Share the application"))
+        sharingIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_message) + packageName)
+        startActivity(Intent.createChooser(sharingIntent, getString(R.string.share_title)))
     }
 
     private fun moreApps() {
@@ -74,11 +72,11 @@ open class BaseActivity : AppCompatActivity() {
     private fun rateApp() {
         try {
             startActivity(Intent(Intent.ACTION_VIEW,
-                    Uri.parse(getString(R.string.old_play_store) + appName)))
+                    Uri.parse(getString(R.string.old_play_store) + packageName)))
         } catch (anfe: android.content.ActivityNotFoundException) {
             startActivity(Intent(
                     Intent.ACTION_VIEW,
-                    Uri.parse(getString(R.string.new_play_store) + appName)))
+                    Uri.parse(getString(R.string.new_play_store) + packageName)))
         }
 
     }
@@ -89,11 +87,8 @@ open class BaseActivity : AppCompatActivity() {
                 .replace(android.R.id.content, fragment).addToBackStack(null).commit()
     }
 
-    private fun readJSONFromAssetsAndConvertTogson(): ParentModel {
-            val json = application.assets.open(resources.getString(R.string.json_file_name)).bufferedReader().use{
-                it.readText()}
-            val gson = Gson()
-        val parentModel = gson.fromJson(json, ParentModel::class.java)
-        return parentModel
+    private fun readJSONFromAssetsAndConvertToGson(): ParentModel {
+        return Gson().fromJson(application.assets.open(resources.getString(R.string.json_file_name)).bufferedReader().use{
+            it.readText()}, ParentModel::class.java)
     }
 }

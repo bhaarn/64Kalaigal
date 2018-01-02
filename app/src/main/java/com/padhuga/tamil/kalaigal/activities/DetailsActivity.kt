@@ -18,10 +18,10 @@ class DetailsActivity : BaseActivity() {
         setContentView(R.layout.activity_detail)
         val position = intent.getIntExtra(Constants.ARG_SECTION_POSITION, -1)
         val childPosition = intent.getIntExtra(Constants.ARG_CHILD_POSITION, -1)
-        Initialize(position, childPosition)
+        initialize(position, childPosition)
     }
 
-    private fun Initialize(position: Int, childPosition: Int) {
+    private fun initialize(position: Int, childPosition: Int) {
         initializeAds()
 
         val mSectionDetailAdapter = SectionDetailAdapter(supportFragmentManager, parentModel, position)

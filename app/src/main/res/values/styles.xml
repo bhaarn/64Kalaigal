@@ -24,19 +24,19 @@
     <style name="ParentCardViewStyle" parent="AppTheme">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_margin">@dimen/commonPadding</item>
+        <item name="android:layout_margin">@dimen/common_padding</item>
         <item name="cardBackgroundColor">@color/colorBottomBackground</item>
-        <item name="cardCornerRadius">@dimen/cardviewProperty</item>
-        <item name="cardElevation">@dimen/cardviewProperty</item>
+        <item name="cardCornerRadius">@dimen/card_view_property</item>
+        <item name="cardElevation">@dimen/card_view_property</item>
     </style>
 
     <style name="ChildCardViewStyle" parent="AppTheme">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_margin">@dimen/commonPadding</item>
+        <item name="android:layout_margin">@dimen/common_padding</item>
         <item name="cardBackgroundColor">@color/colorBackground</item>
-        <item name="cardCornerRadius">@dimen/cardviewProperty</item>
-        <item name="cardElevation">@dimen/cardviewProperty</item>
+        <item name="cardCornerRadius">@dimen/card_view_property</item>
+        <item name="cardElevation">@dimen/card_view_property</item>
     </style>
 
     <style name="ParentLinearLayoutStyle" parent="AppTheme">
@@ -55,7 +55,7 @@
     <style name="TextViewStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:padding">@dimen/commonPadding</item>
+        <item name="android:padding">@dimen/common_padding</item>
         <item name="android:textColor">@color/colorListViewHeaderText</item>
     </style>
 

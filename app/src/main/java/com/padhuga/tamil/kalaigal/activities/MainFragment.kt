@@ -8,8 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ListView
-import com.padhuga.tamil.kalaigal.utilities.Constants
 import com.padhuga.tamil.kalaigal.R
+import com.padhuga.tamil.kalaigal.utilities.Constants
 
 class MainFragment : ListFragment() {
     private var parentPosition: Int = 0
@@ -17,19 +17,17 @@ class MainFragment : ListFragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                      savedInstanceState: Bundle?): View? {
         val rootView = inflater?.inflate(R.layout.fragment_main, container, false)
-        parentPosition = getArguments().getInt(Constants.ARG_SECTION_POSITION)
-        initializeList(rootView)
+        parentPosition = arguments.getInt(Constants.ARG_SECTION_POSITION)
+        initializeList()
         return rootView
     }
 
-    private fun initializeList(rootView: View?) {
+    private fun initializeList() {
         val listData = ArrayList<String>()
-        for (i in 0 until (getActivity() as BaseActivity).parentModel.data.type[parentPosition].type.size) {
-            listData.add((getActivity() as BaseActivity).parentModel.data.type[parentPosition].type[i].title)
+        for (i in 0 until (activity as BaseActivity).parentModel.data.type[parentPosition].type.size) {
+            listData.add((activity as BaseActivity).parentModel.data.type[parentPosition].type[i].title)
         }
-
-        val listViewAdapter = ArrayAdapter(getContext(), android.R.layout.simple_list_item_1, listData)
-        setListAdapter(listViewAdapter)
+        listAdapter = ArrayAdapter(context, android.R.layout.simple_list_item_1, listData)
     }
 
     override fun onListItemClick(l: ListView, v: View, position: Int, id: Long) {
@@ -37,7 +35,7 @@ class MainFragment : ListFragment() {
     }
 
     private fun setupUI(childPosition: Int) {
-        val intent = Intent(getActivity(), DetailsActivity::class.java)
+        val intent = Intent(activity, DetailsActivity::class.java)
         intent.putExtra(Constants.ARG_SECTION_POSITION, parentPosition)
         intent.putExtra(Constants.ARG_CHILD_POSITION, childPosition)
         startActivity(intent)
@@ -48,7 +46,7 @@ class MainFragment : ListFragment() {
             val mainFragment = MainFragment()
             val args = Bundle()
             args.putInt(Constants.ARG_SECTION_POSITION, position)
-            mainFragment.setArguments(args)
+            mainFragment.arguments = args
             return mainFragment
         }
     }
