@@ -19,8 +19,7 @@ class MainActivity : BaseActivity() {
     }
 
     private fun initialize() {
-        val mSectionsPagerAdapter = SectionPagerAdapter(supportFragmentManager, parentModel)
-        container.adapter = mSectionsPagerAdapter
+        container.adapter = SectionPagerAdapter(supportFragmentManager, parentModel)
         tabLayout.setupWithViewPager(container)
 
         initializeAds()
@@ -33,7 +32,6 @@ class MainActivity : BaseActivity() {
                 .addTestDevice("66E56BD85B959A0701EA3C5F7D32E19D")
                 .build()
         adView.loadAd(adRequest)
-        val b = adRequest.isTestDevice(this)
-        Log.d("Bharani", b.toString())
+        Log.d("Bharani", adRequest.isTestDevice(this).toString())
     }
 }

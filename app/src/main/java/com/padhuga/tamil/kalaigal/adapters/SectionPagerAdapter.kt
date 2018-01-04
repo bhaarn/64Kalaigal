@@ -3,8 +3,8 @@ package com.padhuga.tamil.kalaigal.adapters
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
-import com.padhuga.tamil.kalaigal.models.ParentModel
 import com.padhuga.tamil.kalaigal.activities.MainFragment
+import com.padhuga.tamil.kalaigal.models.ParentModel
 
 class SectionPagerAdapter(fm: FragmentManager, private val parentModel: ParentModel) : FragmentPagerAdapter(fm) {
 

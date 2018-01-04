@@ -12,25 +12,25 @@ import kotlinx.android.synthetic.main.fragment_details.view.*
 
 class DetailsFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
-                     savedInstanceState: Bundle?): View? {
-        val rootView = inflater?.inflate(
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                     savedInstanceState: Bundle?): View {
+        val rootView = inflater.inflate(
                 R.layout.fragment_details, container, false) as ViewGroup
         setData(rootView)
         return rootView
     }
 
     private fun setData(rootView: ViewGroup) {
-        val position = arguments.getInt(Constants.ARG_SECTION_POSITION)
-        val childPosition = arguments.getInt(Constants.ARG_CHILD_POSITION)
+        val position = arguments!!.getInt(Constants.ARG_SECTION_POSITION)
+        val childPosition = arguments!!.getInt(Constants.ARG_CHILD_POSITION)
         val parentModel = (activity as BaseActivity).parentModel.data.type[position].type[childPosition]
 
-        rootView.parent_title?.text = parentModel.title
-        rootView.parent_soothiram?.text = parentModel.soothiram
-        rootView.parent_content?.text = parentModel.desc
-        rootView.parent_example?.text = parentModel.example
-        if(rootView.parent_soothiram?.text != null) {
-            rootView.parent_soothiram?.visibility = View.VISIBLE
+        rootView.parent_title.text = parentModel.title
+        rootView.parent_soothiram.text = parentModel.soothiram
+        rootView.parent_content.text = parentModel.desc
+        rootView.parent_example.text = parentModel.example
+        if(rootView.parent_soothiram.text != null) {
+            rootView.parent_soothiram.visibility = View.VISIBLE
         }
     }
 

@@ -9,10 +9,10 @@ import com.padhuga.tamil.kalaigal.R
 import kotlinx.android.synthetic.main.fragment_about.view.*
 
 class AboutFragment : Fragment() {
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        val rootView = inflater?.inflate(R.layout.fragment_about, container, false)
-        rootView?.about_text?.setText(R.string.about_text)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View {
+        val rootView = inflater.inflate(R.layout.fragment_about, container, false)
+        rootView.about_text.setText(R.string.about_text)
         return rootView
     }
 }

@@ -7,11 +7,6 @@
         <item name="android:windowBackground">@color/windowBackgroundColor_black</item> // Background Color
     </style>
 
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
@@ -19,15 +14,6 @@
     <style name="ScrollViewStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
-    </style>
-
-    <style name="ParentCardViewStyle" parent="AppTheme">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_margin">@dimen/common_padding</item>
-        <item name="cardBackgroundColor">@color/colorBottomBackground</item>
-        <item name="cardCornerRadius">@dimen/card_view_property</item>
-        <item name="cardElevation">@dimen/card_view_property</item>
     </style>
 
     <style name="ChildCardViewStyle" parent="AppTheme">
@@ -61,7 +47,7 @@
 
     <style name="ListViewStyle">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@color/colorBackground</item>
         <item name="android:textColor">@color/colorListViewHeaderText</item>
     </style>

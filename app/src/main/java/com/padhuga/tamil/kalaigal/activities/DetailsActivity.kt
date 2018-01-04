@@ -22,11 +22,11 @@ class DetailsActivity : BaseActivity() {
     }
 
     private fun initialize(position: Int, childPosition: Int) {
-        initializeAds()
-
         val mSectionDetailAdapter = SectionDetailAdapter(supportFragmentManager, parentModel, position)
         container.adapter = mSectionDetailAdapter
         container.currentItem = childPosition
+
+        initializeAds()
     }
 
     private fun initializeAds() {

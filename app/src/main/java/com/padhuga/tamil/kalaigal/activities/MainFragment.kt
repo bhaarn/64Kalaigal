@@ -14,30 +14,24 @@ import com.padhuga.tamil.kalaigal.utilities.Constants
 class MainFragment : ListFragment() {
     private var parentPosition: Int = 0
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
-                     savedInstanceState: Bundle?): View? {
-        val rootView = inflater?.inflate(R.layout.fragment_main, container, false)
-        parentPosition = arguments.getInt(Constants.ARG_SECTION_POSITION)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                     savedInstanceState: Bundle?): View {
+        val rootView = inflater.inflate(R.layout.fragment_main, container, false)
+        parentPosition = arguments!!.getInt(Constants.ARG_SECTION_POSITION)
         initializeList()
         return rootView
     }
 
     private fun initializeList() {
         val listData = ArrayList<String>()
-        for (i in 0 until (activity as BaseActivity).parentModel.data.type[parentPosition].type.size) {
-            listData.add((activity as BaseActivity).parentModel.data.type[parentPosition].type[i].title)
-        }
+        (0 until (activity as BaseActivity).parentModel.data.type[parentPosition].type.size).mapTo(listData) { (activity as BaseActivity).parentModel.data.type[parentPosition].type[it].title }
         listAdapter = ArrayAdapter(context, android.R.layout.simple_list_item_1, listData)
     }
 
     override fun onListItemClick(l: ListView, v: View, position: Int, id: Long) {
-        setupUI(position)
-    }
-
-    private fun setupUI(childPosition: Int) {
         val intent = Intent(activity, DetailsActivity::class.java)
         intent.putExtra(Constants.ARG_SECTION_POSITION, parentPosition)
-        intent.putExtra(Constants.ARG_CHILD_POSITION, childPosition)
+        intent.putExtra(Constants.ARG_CHILD_POSITION, position)
         startActivity(intent)
     }
 

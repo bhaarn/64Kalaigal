@@ -13,6 +13,5 @@
     <string name="about_text">about</string>
     <string name="help_text">help</string>
     <string name="json_file_name">64kalai.json</string>
-    <string name="json_open_file_format">UTF-8</string>
     <string name="share_title">Share the application</string>
 </resources>

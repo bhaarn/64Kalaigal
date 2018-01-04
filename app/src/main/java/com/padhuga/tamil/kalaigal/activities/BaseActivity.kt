@@ -3,6 +3,7 @@ package com.padhuga.tamil.kalaigal.activities
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
@@ -15,7 +16,9 @@ open class BaseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        parentModel = readJSONFromAssetsAndConvertToGson()
+        parentModel = Gson().fromJson(application.assets.open(resources.getString(R.string.json_file_name)).bufferedReader().use {
+            it.readText()
+        }, ParentModel::class.java)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -30,7 +33,7 @@ open class BaseActivity : AppCompatActivity() {
                 return true
             }
             R.id.action_feature_help -> {
-                showHelp()
+                fragmentLoader(HelpFragment())
                 return true
             }
             R.id.action_app_share -> {
@@ -42,7 +45,7 @@ open class BaseActivity : AppCompatActivity() {
                 return true
             }
             R.id.action_about -> {
-                aboutUs()
+                fragmentLoader(AboutFragment())
                 return true
             }
             else -> return super.onOptionsItemSelected(item)
@@ -63,17 +66,11 @@ open class BaseActivity : AppCompatActivity() {
                 Uri.parse(getString(R.string.play_more_apps))))
     }
 
-    private fun aboutUs() {
-        val fragment = AboutFragment()
-        supportFragmentManager.beginTransaction()
-                .replace(android.R.id.content, fragment).addToBackStack(null).commit()
-    }
-
     private fun rateApp() {
         try {
             startActivity(Intent(Intent.ACTION_VIEW,
                     Uri.parse(getString(R.string.old_play_store) + packageName)))
-        } catch (anfe: android.content.ActivityNotFoundException) {
+        } catch (activityNotFoundException: android.content.ActivityNotFoundException) {
             startActivity(Intent(
                     Intent.ACTION_VIEW,
                     Uri.parse(getString(R.string.new_play_store) + packageName)))
@@ -81,14 +78,8 @@ open class BaseActivity : AppCompatActivity() {
 
     }
 
-    private fun showHelp() {
-        val fragment = HelpFragment()
+    private fun fragmentLoader(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
                 .replace(android.R.id.content, fragment).addToBackStack(null).commit()
-    }
-
-    private fun readJSONFromAssetsAndConvertToGson(): ParentModel {
-        return Gson().fromJson(application.assets.open(resources.getString(R.string.json_file_name)).bufferedReader().use{
-            it.readText()}, ParentModel::class.java)
     }
 }

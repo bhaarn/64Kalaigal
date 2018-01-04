@@ -1,5 +1,3 @@
 package com.padhuga.tamil.kalaigal.models
 
-class ParentModel {
-    lateinit var data: Data
-}
+data class ParentModel(var data: Data)

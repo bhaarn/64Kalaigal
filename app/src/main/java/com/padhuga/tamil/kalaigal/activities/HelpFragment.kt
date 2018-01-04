@@ -10,10 +10,10 @@ import kotlinx.android.synthetic.main.fragment_help.view.*
 
 
 class HelpFragment : Fragment() {
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        val rootView = inflater?.inflate(R.layout.fragment_help, container, false)
-        rootView?.help_text?.setText(R.string.help_text)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View {
+        val rootView = inflater.inflate(R.layout.fragment_help, container, false)
+        rootView.help_text.setText(R.string.help_text)
         return rootView
     }
 }
