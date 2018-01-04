@@ -1,0 +1,92 @@
+{
+  "project_info": {
+    "project_number": "594642547675",
+    "firebase_url": "https://tamil-58af7.firebaseio.com",
+    "project_id": "tamil-58af7",
+    "storage_bucket": "tamil-58af7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594642547675:android:296076fc393b60a6",
+        "android_client_info": {
+          "package_name": "com.padhuga.tamil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "594642547675-5623dvv2isubih4mf35k6sp3k6lii9au.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJAUGy9Ptj6ch-E_XgpBFIBS7T6TAVbLI"
+        },
+        {
+          "current_key": "AIzaSyBjbTOXVid8UoVpzL_CLCboAUTBSiAMIAQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594642547675:android:012bfa3de4cabc21",
+        "android_client_info": {
+          "package_name": "com.padhuga.tamil.kalaigal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "594642547675-0v0atn76uhroqc2ker3lher21tnur5gi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.padhuga.tamil.kalaigal",
+            "certificate_hash": "ce2bb0e1ca58552e8e776c974d30a79300db0f9a"
+          }
+        },
+        {
+          "client_id": "594642547675-5623dvv2isubih4mf35k6sp3k6lii9au.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJAUGy9Ptj6ch-E_XgpBFIBS7T6TAVbLI"
+        },
+        {
+          "current_key": "AIzaSyBjbTOXVid8UoVpzL_CLCboAUTBSiAMIAQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "594642547675-5623dvv2isubih4mf35k6sp3k6lii9au.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
