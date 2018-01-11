@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">64Kalai</string>
     <string name="ad_id">ca-app-pub-2373003321681741~7281773351</string>
+  <!--  <string name="ad_id">ca-app-pub-3940256099942544/6300978111</string>  -->
     <string name="action_app_rate">Rate the App</string>
     <string name="action_feature_help">Help</string>
     <string name="action_app_share">Share the App</string>
