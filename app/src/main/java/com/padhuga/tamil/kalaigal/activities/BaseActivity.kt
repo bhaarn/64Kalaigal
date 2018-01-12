@@ -26,30 +26,18 @@ open class BaseActivity : AppCompatActivity() {
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.action_app_rate -> {
-                rateApp()
-                return true
-            }
-            R.id.action_feature_help -> {
-                fragmentLoader(HelpFragment())
-                return true
-            }
-            R.id.action_app_share -> {
-                shareApp()
-                return true
-            }
-            R.id.action_more_apps -> {
-                moreApps()
-                return true
-            }
-            R.id.action_about -> {
-                fragmentLoader(AboutFragment())
-                return true
-            }
-            else -> return super.onOptionsItemSelected(item)
+    override fun onOptionsItemSelected(item: MenuItem) =  when (item.itemId) {
+            R.id.action_app_rate -> consume { rateApp() }
+            R.id.action_feature_help -> consume { fragmentLoader(HelpFragment()) }
+            R.id.action_app_share -> consume { shareApp() }
+            R.id.action_more_apps -> consume { moreApps() }
+            R.id.action_about -> consume { fragmentLoader(AboutFragment()) }
+            else -> super.onOptionsItemSelected(item)
         }
+
+    private inline fun consume(f: () -> Unit): Boolean {
+        f()
+        return true
     }
 
     private fun shareApp() {
