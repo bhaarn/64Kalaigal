@@ -21,8 +21,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.MainActivity" />
-        <activity android:name=".activities.DetailsActivity" />
+        <activity android:name=".activities.MainActivity" android:launchMode="singleTop">
+        <meta-data
+            android:name="android.app.searchable"
+            android:resource="@xml/searchable" />
+        <intent-filter>
+            <action android:name="android.intent.action.SEARCH" />
+        </intent-filter>
+        </activity>
+        <activity android:name=".activities.DetailsActivity" android:launchMode="singleTop">
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

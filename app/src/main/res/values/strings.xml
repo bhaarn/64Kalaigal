@@ -15,4 +15,7 @@
     <string name="help_text">help</string>
     <string name="json_file_name">64kalai.json</string>
     <string name="share_title">Share the application</string>
+    <string name="search_hint">64Kalai</string>
+    <string name="action_app_search">Search</string>
+    <string name="tamil_keyboard_check">You will be able to search only if you have Tamil Keyboard.</string>
 </resources>
