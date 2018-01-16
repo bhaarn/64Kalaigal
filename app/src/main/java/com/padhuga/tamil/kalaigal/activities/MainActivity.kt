@@ -1,4 +1,5 @@
 package com.padhuga.tamil.kalaigal.activities
+
 import android.os.Bundle
 import android.util.Log
 import com.google.android.gms.ads.AdRequest
@@ -8,7 +9,6 @@ import com.padhuga.tamil.kalaigal.adapters.SectionPagerAdapter
 import kotlinx.android.synthetic.main.activity_main_list.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
-
 
 class MainActivity : BaseActivity() {
 

@@ -15,7 +15,7 @@ class MainFragment : ListFragment() {
     private var parentPosition: Int = 0
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                     savedInstanceState: Bundle?): View {
+                              savedInstanceState: Bundle?): View {
         val rootView = inflater.inflate(R.layout.fragment_main, container, false)
         parentPosition = arguments!!.getInt(Constants.ARG_SECTION_POSITION)
         initializeList()

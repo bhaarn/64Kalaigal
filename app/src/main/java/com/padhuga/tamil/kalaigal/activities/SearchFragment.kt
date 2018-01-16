@@ -23,7 +23,7 @@ class SearchFragment : Fragment() {
         }
         val searchArrayAdapter = ArrayAdapter(context!!, android.R.layout.simple_list_item_1, queryResults)
         rootView.search_results_list.adapter = searchArrayAdapter
-        rootView.search_results_list.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ -> setupUI(searchRetriever[position].position,  searchRetriever[position].childPosition) }
+        rootView.search_results_list.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ -> setupUI(searchRetriever[position].position, searchRetriever[position].childPosition) }
         return rootView
     }
 

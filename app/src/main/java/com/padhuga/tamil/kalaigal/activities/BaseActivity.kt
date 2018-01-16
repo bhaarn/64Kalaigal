@@ -20,7 +20,7 @@ import java.util.*
 
 open class BaseActivity : AppCompatActivity() {
     lateinit var parentModel: ParentModel
-    lateinit var menu: Menu
+    private lateinit var menu: Menu
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,15 +36,15 @@ open class BaseActivity : AppCompatActivity() {
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem) =  when (item.itemId) {
-            R.id.action_app_search -> consume { performSearch(menu) }
-            R.id.action_app_rate -> consume { rateApp() }
-            R.id.action_feature_help -> consume { fragmentLoader(HelpFragment()) }
-            R.id.action_app_share -> consume { shareApp() }
-            R.id.action_more_apps -> consume { moreApps() }
-            R.id.action_about -> consume { fragmentLoader(AboutFragment()) }
-            else -> super.onOptionsItemSelected(item)
-        }
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        R.id.action_app_search -> consume { performSearch(menu) }
+        R.id.action_app_rate -> consume { rateApp() }
+        R.id.action_feature_help -> consume { fragmentLoader(HelpFragment()) }
+        R.id.action_app_share -> consume { shareApp() }
+        R.id.action_more_apps -> consume { moreApps() }
+        R.id.action_about -> consume { fragmentLoader(AboutFragment()) }
+        else -> super.onOptionsItemSelected(item)
+    }
 
     private inline fun consume(f: () -> Unit): Boolean {
         f()
@@ -113,12 +113,12 @@ open class BaseActivity : AppCompatActivity() {
             (0 until parentModel.data.type[position].type.size)
                     .filter {
                         parentModel.data.type[position].type[it].title.contains(query) ||
-                        parentModel.data.type[position].type[it].soothiram.contains(query) ||
+                                parentModel.data.type[position].type[it].soothiram.contains(query) ||
                                 parentModel.data.type[position].type[it].desc.contains(query) ||
                                 parentModel.data.type[position].type[it].example.contains(query)
                     }
                     .mapTo(searchRetriever) {
-                        SearchRetriever(parentModel.data.type.get(position).type[it].title,
+                        SearchRetriever(parentModel.data.type[position].type[it].title,
                                 position, it)
                     }
         }
